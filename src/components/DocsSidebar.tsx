@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { ChevronRight, ChevronDown, Github } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { docsStructure } from '../data/docsStructure';
 
@@ -50,8 +50,8 @@ export default function DocsSidebar() {
                                             <Link
                                                 to={item.path}
                                                 className={`block text-sm py-1 px-2 rounded-md transition-colors ${isActive
-                                                        ? 'text-orange-500 bg-orange-500/10 font-medium'
-                                                        : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
+                                                    ? 'text-orange-500 bg-orange-500/10 font-medium'
+                                                    : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
                                                     }`}
                                             >
                                                 {item.title}
@@ -63,6 +63,37 @@ export default function DocsSidebar() {
                         )}
                     </div>
                 ))}
+
+                {/* Community Section */}
+                <div className="pt-4 border-t border-[#2a2a2a]">
+                    <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">Community</h3>
+                    <ul className="space-y-1">
+                        <li>
+                            <a
+                                href="https://x.com/MoAIagents"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:bg-[#1a1a1a] hover:text-white transition-all group"
+                            >
+                                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current group-hover:text-orange-500 transition-colors">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                                X (Twitter)
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/whatapponthetime/Moai-Agent.git"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:bg-[#1a1a1a] hover:text-white transition-all group"
+                            >
+                                <Github className="w-4 h-4 group-hover:text-orange-500 transition-colors" />
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );

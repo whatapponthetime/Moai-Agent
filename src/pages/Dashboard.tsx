@@ -1,4 +1,4 @@
-import { ArrowRight, Code2, Terminal, Sparkles, Zap, Shield, CheckCircle2, Info } from 'lucide-react';
+import { ArrowRight, Code2, Terminal, Sparkles, Zap, Shield, CheckCircle2, Info, Github } from 'lucide-react';
 import { introData } from '../data/intro';
 
 type Page = 'dashboard' | 'agents' | 'skills' | 'docs';
@@ -14,15 +14,15 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px]" />
-        
+
         {/* Modern Grid */}
-        <div 
-          className="absolute inset-0 opacity-[0.15]" 
+        <div
+          className="absolute inset-0 opacity-[0.15]"
           style={{
             backgroundImage: `linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px)`,
             backgroundSize: '40px 40px',
             maskImage: 'radial-gradient(ellipse at center, black, transparent 80%)'
-          }} 
+          }}
         />
       </div>
 
@@ -47,15 +47,15 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
               AI Agents
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light italic">
-            "High-performance development environment for <span className="text-white font-medium">Claude Code</span>. 
+            "High-performance development environment for <span className="text-white font-medium">Claude Code</span>.
             Automate complex workflows with <span className="text-orange-500/90 font-semibold italic">Vibe Coding</span> excellence."
           </p>
         </div>
 
         {/* Actions Section */}
-        <div className="flex flex-wrap items-center justify-center gap-5 mb-24">
+        <div className="flex flex-wrap items-center justify-center gap-5 mb-6">
           <button
             onClick={() => onNavigate('skills')}
             className="group relative px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg transition-all duration-300 flex items-center gap-3 overflow-hidden shadow-[0_0_40px_-10px_rgba(249,115,22,0.5)] active:scale-95"
@@ -65,7 +65,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
             Explore Skills
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
           </button>
-          
+
           <button
             onClick={() => onNavigate('docs')}
             className="group px-10 py-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-bold text-lg transition-all duration-300 flex items-center gap-3 border border-white/10 hover:border-white/20 backdrop-blur-xl active:scale-95"
@@ -73,6 +73,30 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
             <Terminal className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
             Documentation
           </button>
+        </div>
+
+        {/* Social Actions */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-24">
+          <a
+            href="https://x.com/MoAIagents"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-white/10 hover:border-orange-500/50 backdrop-blur-xl active:scale-95"
+          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current group-hover:text-orange-500 transition-colors">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Follow on X
+          </a>
+          <a
+            href="https://github.com/whatapponthetime/Moai-Agent.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-white/10 hover:border-orange-500/50 backdrop-blur-xl active:scale-95"
+          >
+            <Github className="w-4 h-4 group-hover:text-orange-500 transition-colors" />
+            Star on GitHub
+          </a>
         </div>
 
         {/* Trust 5 Quality Framework Section */}
@@ -95,37 +119,37 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         {/* Methodology Section (SPEC & DDD) */}
         <div className="grid md:grid-cols-2 gap-8 mb-24 text-left">
           <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-8 rounded-[2.5rem] backdrop-blur-sm relative overflow-hidden group">
-             <div className="absolute -right-10 -top-10 w-40 h-40 bg-orange-500/5 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-colors" />
-             <div className="flex items-center gap-3 mb-4">
-               <Info className="w-6 h-6 text-orange-500" />
-               <h3 className="text-2xl font-bold text-white">{introData.methodology.spec.title}</h3>
-             </div>
-             <p className="text-gray-400 mb-6 leading-relaxed italic">{introData.methodology.spec.description}</p>
-             <ul className="space-y-3">
-               {introData.methodology.spec.benefits.map((benefit, i) => (
-                 <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                   <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
-                   {benefit}
-                 </li>
-               ))}
-             </ul>
+            <div className="absolute -right-10 -top-10 w-40 h-40 bg-orange-500/5 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-colors" />
+            <div className="flex items-center gap-3 mb-4">
+              <Info className="w-6 h-6 text-orange-500" />
+              <h3 className="text-2xl font-bold text-white">{introData.methodology.spec.title}</h3>
+            </div>
+            <p className="text-gray-400 mb-6 leading-relaxed italic">{introData.methodology.spec.description}</p>
+            <ul className="space-y-3">
+              {introData.methodology.spec.benefits.map((benefit, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                  <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-8 rounded-[2.5rem] backdrop-blur-sm relative overflow-hidden group">
-             <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-colors" />
-             <div className="flex items-center gap-3 mb-4">
-               <Zap className="w-6 h-6 text-blue-400" />
-               <h3 className="text-2xl font-bold text-white">{introData.methodology.ddd.title}</h3>
-             </div>
-             <p className="text-gray-400 mb-6 leading-relaxed italic">{introData.methodology.ddd.description}</p>
-             <div className="space-y-4">
-               {introData.methodology.ddd.cycle.map((item, i) => (
-                 <div key={i} className="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/5">
-                   <div className="text-xs font-mono font-bold text-blue-400 w-20 shrink-0">{item.phase}</div>
-                   <div className="text-sm text-gray-400">{item.action}</div>
-                 </div>
-               ))}
-             </div>
+            <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-colors" />
+            <div className="flex items-center gap-3 mb-4">
+              <Zap className="w-6 h-6 text-blue-400" />
+              <h3 className="text-2xl font-bold text-white">{introData.methodology.ddd.title}</h3>
+            </div>
+            <p className="text-gray-400 mb-6 leading-relaxed italic">{introData.methodology.ddd.description}</p>
+            <div className="space-y-4">
+              {introData.methodology.ddd.cycle.map((item, i) => (
+                <div key={i} className="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/5">
+                  <div className="text-xs font-mono font-bold text-blue-400 w-20 shrink-0">{item.phase}</div>
+                  <div className="text-sm text-gray-400">{item.action}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

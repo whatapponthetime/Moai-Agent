@@ -1,4 +1,4 @@
-import { Search, LayoutDashboard, Users, Puzzle, ChevronDown, ChevronRight, Github } from 'lucide-react';
+import { Search, LayoutDashboard, Users, Puzzle, ChevronDown, ChevronRight, Github, Terminal } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { docsStructure } from '../data/docsStructure';
@@ -72,8 +72,8 @@ export default function Sidebar({ searchQuery, onSearchChange }: SidebarProps) {
                 <Link
                   to="/"
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${isActive('/')
-                      ? 'bg-orange-500/10 text-orange-500 font-medium'
-                      : 'text-gray-400 hover:bg-[#1a1a1a] hover:text-white'
+                    ? 'bg-orange-500/10 text-orange-500 font-medium'
+                    : 'text-gray-400 hover:bg-[#1a1a1a] hover:text-white'
                     }`}
                 >
                   <LayoutDashboard className="w-4 h-4" />
@@ -84,8 +84,8 @@ export default function Sidebar({ searchQuery, onSearchChange }: SidebarProps) {
                 <Link
                   to="/agents"
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${isActive('/agents')
-                      ? 'bg-orange-500/10 text-orange-500 font-medium'
-                      : 'text-gray-400 hover:bg-[#1a1a1a] hover:text-white'
+                    ? 'bg-orange-500/10 text-orange-500 font-medium'
+                    : 'text-gray-400 hover:bg-[#1a1a1a] hover:text-white'
                     }`}
                 >
                   <Users className="w-4 h-4" />
@@ -96,12 +96,24 @@ export default function Sidebar({ searchQuery, onSearchChange }: SidebarProps) {
                 <Link
                   to="/skills"
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${isActive('/skills')
-                      ? 'bg-orange-500/10 text-orange-500 font-medium'
-                      : 'text-gray-400 hover:bg-[#1a1a1a] hover:text-white'
+                    ? 'bg-orange-500/10 text-orange-500 font-medium'
+                    : 'text-gray-400 hover:bg-[#1a1a1a] hover:text-white'
                     }`}
                 >
                   <Puzzle className="w-4 h-4" />
                   Browse Skills
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/terminal"
+                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${isActive('/terminal')
+                    ? 'bg-orange-500/10 text-orange-500 font-medium'
+                    : 'text-gray-400 hover:bg-[#1a1a1a] hover:text-white'
+                    }`}
+                >
+                  <Terminal className="w-4 h-4" />
+                  Terminal
                 </Link>
               </li>
             </ul>
@@ -132,8 +144,8 @@ export default function Sidebar({ searchQuery, onSearchChange }: SidebarProps) {
                           <Link
                             to={item.path}
                             className={`block text-xs py-1.5 px-2 rounded-md transition-colors ${isActive(item.path)
-                                ? 'text-orange-500 bg-orange-500/10 font-medium'
-                                : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
+                              ? 'text-orange-500 bg-orange-500/10 font-medium'
+                              : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
                               }`}
                           >
                             {item.title}

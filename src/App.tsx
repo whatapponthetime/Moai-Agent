@@ -5,6 +5,7 @@ import BrowseAgents from './pages/BrowseAgents';
 import BrowseSkills from './pages/BrowseSkills';
 import Dashboard from './pages/Dashboard';
 import Documentation from './pages/Documentation';
+import TerminalPage from './pages/Terminal';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Dashboard onNavigate={() => { }} />} />
           <Route path="/agents" element={<BrowseAgents searchQuery={searchQuery} />} />
           <Route path="/skills" element={<BrowseSkills searchQuery={searchQuery} />} />
+          <Route path="/terminal" element={<TerminalPage />} />
           <Route path="/docs/*" element={<Documentation />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

@@ -1,5 +1,21 @@
 
 export const docsContent: Record<string, string> = {
+  '/docs': `
+# MoAI-ADK Documentation
+
+Welcome to the MoAI-ADK documentation. This guide will help you understand and master the Agentic Development Kit.
+
+## 🚀 Quick Navigation
+
+- **[Getting Started](/docs/getting-started/introduction)**: Introduction and installation guide.
+- **[Core Concepts](/docs/core-concepts/what-is-moai-adk)**: Understand the methodology and framework.
+- **[CLI Reference](/docs/utility-commands/moai)**: Full list of available commands.
+- **[Advanced Guide](/docs/advanced/agent-guide)**: Deep dive into agents and skills.
+
+## 🛠 Features
+
+MoAI-ADK provides 28 specialized AI agents and 52 skills to automate your workflow using **SPEC-First DDD** methodology and the **TRUST 5** quality framework.
+`,
   '/docs/getting-started/introduction': `
 import { Callout } from 'nextra/components'
 

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { docsContent } from '../data/docsContent';
@@ -6,16 +5,12 @@ import { docsContent } from '../data/docsContent';
 export default function Documentation() {
   const location = useLocation();
   const navigate = useNavigate();
-  const pathname = location.pathname;
+  const pathname = location.pathname.endsWith('/') && location.pathname !== '/'
+    ? location.pathname.slice(0, -1)
+    : location.pathname;
 
-  // Redirect /docs to /docs/getting-started/introduction
-  useEffect(() => {
-    if (pathname === '/docs' || pathname === '/docs/') {
-      navigate('/docs/getting-started/introduction', { replace: true });
-    }
-  }, [pathname, navigate]);
-
-  const content = docsContent[pathname] || `
+  // Content based on pathname, with a fallback if path is not found
+  const content = docsContent[pathname] || docsContent['/docs'] || `
 # Coming Soon
 
 This section is under construction.

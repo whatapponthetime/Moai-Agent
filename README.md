@@ -31,7 +31,6 @@
 
 ---
 
-> 📚 **[Official Documentation](https://adk.mo.ai.kr)** | **[GitHub Discussions](https://github.com/modu-ai/moai-adk/discussions)**
 
 ---
 

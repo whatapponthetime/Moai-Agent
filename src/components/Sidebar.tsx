@@ -1,4 +1,4 @@
-import { Search, LayoutDashboard, Users, Puzzle, ChevronDown, ChevronRight, Github, Terminal } from 'lucide-react';
+import { Search, LayoutDashboard, Users, Puzzle, ChevronDown, ChevronRight, Github } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { docsStructure } from '../data/docsStructure';
@@ -104,7 +104,7 @@ export default function Sidebar({ searchQuery, onSearchChange }: SidebarProps) {
                   Browse Skills
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/terminal"
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${isActive('/terminal')
@@ -115,7 +115,7 @@ export default function Sidebar({ searchQuery, onSearchChange }: SidebarProps) {
                   <Terminal className="w-4 h-4" />
                   Terminal
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
